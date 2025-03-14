@@ -32,6 +32,7 @@
             background-color: black;
             filter: blur(2px);
             z-index: -1;
+            transition: background 0.5s ease-in-out, filter 0.5s ease-in-out;
         }
 
         p {
@@ -42,7 +43,19 @@
         }
     </style>
 </head>
-<body>
+<body onclick="changeplace()">
     <p>Vào Chùa</p>
 </body>
+    <script>
+        let currentplace = 0;
+        function changeplace(){
+            if (currentplace === 0) {
+                currentplace = 1;
+                document.body.style.backgroundImage = "url('dia.png')";
+                let beforeElement = document.querySelector("body::before");
+                beforeElement.style.background = "url('dia.png') no-repeat center";
+                beforeElement.style.filter = "none";
+            }
+        }
+    </script>
 </html>
