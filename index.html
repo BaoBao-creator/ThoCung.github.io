@@ -3,15 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ảnh nền vừa màn hình</title>
+    <title>Ảnh nền mờ</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             height: 100vh;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
             background: url('loading.png') no-repeat center center;
-            background-size: contain; /* Ảnh hiển thị vừa đủ không bị cắt hoặc kéo giãn */
-            background-color: black; /* Phần thừa sẽ có màu nền */
+            background-size: contain;
+            filter: blur(10px);
+            z-index: -1;
         }
     </style>
 </head>
