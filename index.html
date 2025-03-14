@@ -12,12 +12,15 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: url('loading.png') no-repeat center center/cover;
+            background: url('loading.png') no-repeat center center;
+            background-size: contain; /* Đảm bảo ảnh vừa với màn hình mà không bị cắt */
+            background-color: black; /* Màu nền nếu ảnh không phủ kín */
             color: white;
             font-size: 48px;
             font-family: Arial, sans-serif;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
+
     </style>
 </head>
 <body>
