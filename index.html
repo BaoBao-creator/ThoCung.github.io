@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vô Chùa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -13,14 +14,32 @@
             align-items: center;
             height: 100vh;
             background: url('loading.png') no-repeat center center;
-            background-size: contain; /* Đảm bảo ảnh vừa với màn hình mà không bị cắt */
-            background-color: black; /* Màu nền nếu ảnh không phủ kín */
+            background-size: contain;
+            background-color: black;
             color: white;
             font-size: 48px;
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+            position: relative;
         }
 
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body>
